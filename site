@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jéssica Cria Sites</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #ff69b4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+    }
+    .servicos,
+    .precos,
+    .contato {
+      background: white;
+      margin: 10px 0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    .botao {
+      background: #ff69b4;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+    }
+    .exemplos a {
+      display: block;
+      margin: 10px 0;
+      color: #333;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jéssica Cria Sites</h1>
+    <p>Sites simples, bonitos e prontos para você usar</p>
+  </header>
+
+  <section class="servicos">
+    <h2>Meus Serviços</h2>
+    <ul>
+      <li>✔ Criação de sites para pequenos negócios</li>
+      <li>✔ Convites digitais para eventos</li>
+      <li>✔ Formulários de confirmação</li>
+      <li>✔ Sites com formulário e integração com e-mail</li>
+    </ul>
+  </section>
+
+  <section class="precos">
+    <h2>Preços</h2>
+    <ul>
+      <li>
+        Site simples (até 3 páginas): R$ 150 <br />
+        <small><em>50% do valor antecipado antes da entrega</em></small>
+      </li>
+      <li>
+        Convite digital personalizado: R$ 80 <br />
+        <small><em>50% do valor antecipado antes da entrega</em></small>
+      </li>
+      <li>
+        Formulário de confirmação integrado: R$ 100 <br />
+        <small><em>50% do valor antecipado antes da entrega</em></small>
+      </li>
+      <li>Manutenção mensal (atualizações e suporte): R$ 30/mês</li>
+    </ul>
+  </section>
+
+  <section class="exemplos">
+    <h2>Exemplos de Sites</h2>
+    <a href="https://html.cafe/x4257b3f8" target="_blank">💍 Site de convite de casamento</a>
+    <a href="https://html.cafe/x4dfb5d45" target="_blank">📝 Site com formulário de confirmação</a>
+  </section>
+
+  <section class="contato">
+    <h2>Fale Comigo</h2>
+    <form id="formContato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit" class="botao">Enviar pelo WhatsApp</button>
+    </form>
+    <p>Ou envie um e-mail: <strong>jessicajfalmeida2@gmail.com</strong></p>
+    <br />
+    <a
+      class="botao"
+      href="https://github.com/dedejfalmieda"
+      target="_blank"
+      rel="noopener noreferrer"
+      >🌐 Ver meus projetos no GitHub</a
+    >
+  </section>
+
+  <footer>
+    <p>&copy; 2025 - Criado por Jéssica Almeida</p>
+  </footer>
+
+  <script>
+    document.getElementById('formContato').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      if (!nome || !email || !mensagem) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      const texto = `Olá, meu nome é ${nome}.%0AE-mail: ${email}%0A%0A${mensagem}`;
+      const numeroWhatsapp = '5532991988933'; // seu número com DDD
+      const url = `https://wa.me/${numeroWhatsapp}?text=${texto}`;
+
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
